@@ -10,38 +10,33 @@ class ChatPage extends HTMLElement {
     state.subscribe(() => {
       const currentState = state.getState();
       sessionStorage.setItem("state", JSON.stringify(currentState))
-      console.log(currentState.messages);
       this.messages = currentState.messages
       this.render()
       this.addListeners()
 
     })
-    const currentState = state.getState();
-    sessionStorage.setItem("state", JSON.stringify(currentState))
     this.render();
     this.addListeners()
   }
   messages: Message[] = []
   addListeners() {
     const form = this.querySelector(".message-form");
-    if (form) {
-      form.addEventListener("submit", e => {
-        e.preventDefault()
-        const cs = state.getState()
-        const inputEl = this.querySelector(".input-msg") as HTMLInputElement;
-        let inputMensaje = inputEl.value
-        const mensaje = {
-          from: cs.nombre,
-          message: inputMensaje
-        }
-        state.pushMessage(mensaje)
-        inputEl.value = ""
-      })
-
-    }
+    form.addEventListener("submit", e => {
+      e.preventDefault()
+      const cs = state.getState()
+      const inputEl = this.querySelector(".input-msg") as HTMLInputElement;
+      let inputMensaje = inputEl.value
+      const mensaje = {
+        from: cs.nombre,
+        message: inputMensaje
+      }
+      state.pushMessage(mensaje)
+      inputEl.value = ""
+    })
   }
   render() {
-    const cs = state.getState();
+    const ssState = sessionStorage.getItem("state");
+    const cs = JSON.parse(ssState)
     this.innerHTML = `
         <style>
 

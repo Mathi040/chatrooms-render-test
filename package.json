@@ -15,7 +15,9 @@
     "dev:front": "parcel serve ./src/index.html",
     "dev:api": "nodemon --watch ./src/api  --exec ts-node ./src/api/index.ts",
     "build:front": "parcel build ./src/index.html",
-    "build:api": "tsc"
+    "build:api": "tsc",
+    "build": "yarn build:front && yarn build:api",
+    "start": "node ./src/api/index.ts"
   },
   "devDependencies": {
     "@types/cors": "^2.8.19",

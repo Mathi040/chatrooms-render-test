@@ -56,7 +56,6 @@ app.post('/messages', (req, res) => {
         });
 });
 
-
 //Rooooms
 app.post('/signup', (req, res) => {
     let { email } = req.body
@@ -160,6 +159,11 @@ app.get('/rooms/:roomId', (req, res) => {
     }
 })
 
+app.use(express.static("dist"))
+
+app.use((req, res) => {
+    res.sendFile(path.join(__dirname, "..", "..", "dist", "index.html"))
+})
 
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
