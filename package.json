@@ -17,7 +17,7 @@
     "build:front": "parcel build ./src/index.html",
     "build:api": "tsc",
     "build": "yarn build:front && yarn build:api",
-    "start": "node ./src/api/index.ts"
+    "start": "node ./dist/api/index.js"
   },
   "devDependencies": {
     "@types/cors": "^2.8.19",
