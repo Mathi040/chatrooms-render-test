@@ -40,20 +40,32 @@ class ChatPage extends HTMLElement {
     this.innerHTML = `
         <style>
 
-.chat {
-  width: 450px;
-  height: 550px;
-  background-color: rgba(177, 175, 175, 0.514);
+
+.body {
+  background-color: rgb(49, 49, 49);
+
 }
-.user {
-  color: purple;
+.content {
+  max-width: 1000px;
+  padding: 30px;
 }
 
+.chat {
+  background-color: rgb(207, 207, 207);
+  height: 70vh;
+}
+
+.user {
+  color: rgb(255, 0, 255);
+}
+h3 {
+  color: rgb(255, 255, 255);
+}
 .input-msg {
   width: 100%;
   height: 50px;
-  background-color: beige;
-  border: 1px solid black;
+  background-color: rgb(172, 172, 172);
+  border: 1px solid rgb(102, 102, 102);
   font-size: 2rem;
 }
 
@@ -66,7 +78,6 @@ button {
   background-color: rgb(196, 235, 157);
   text-align: right;
 }
-
         </style>
 
 

@@ -105,95 +105,127 @@ class Home extends HTMLElement {
         this.innerHTML = `
         <style>
         #room-id {
-            display: none;
-        }
-        .content {
-            background-color: rgb(222, 233, 233);
-            padding: 30px;
-            width: 70vw;
-            height: 90vh;
-            border-radius: 2%;
-            display: flex;
-            flex-direction: column;
-            gap: 50px;
-        }
+  display: none;
+}
 
-        h1 {
-            margin: 0;
-            text-align: center;
-            font-size: 4rem;
-        }
+.content {
+  background-color: rgb(222, 233, 233);
+  padding: 30px;
+  width: 95vw;
+  height: 95vh;
+  border-radius: 2%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
 
-        .login-form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
+h1 {
+  margin: 0;
+  text-align: center;
+  font-size: 10vw;
+}
 
-        label,
-        option {
-            font-size: 2rem;
-            text-align: center;
-        }
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
 
-        input,
-        select {
-            height: 3rem;
-            max-width: 100%;
-            font-size: 2rem;
-        }
+label,
+option {
+  font-size: 2rem;
+  text-align: center;
+}
 
-        .button-container {
-            margin-top: 30px;
-            text-align: center;
-        }
+input,
+select {
+  height: 3rem;
+  max-width: 100%;
+  font-size: 2rem;
+}
 
-        button {
-            height: 3rem;
-            width: 10rem;
-            font-size: 2rem;
-            border: none;
-            background-color: rgb(200, 252, 166);
-            color: black;
-        }
+.roomIdContainter {
+  margin-top: 2rem;
+}
 
-        button:hover {
-            cursor: pointer;
-            background-color: rgb(91, 143, 57);
-            color: white;
-        }
+.button-container {
+  margin-top: 30px;
+  text-align: center;
+}
+
+button {
+  height: 3rem;
+  width: 10rem;
+  font-size: 2rem;
+  border: none;
+  background-color: rgb(200, 252, 166);
+  color: black;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: rgb(91, 143, 57);
+  color: white;
+}
+
+@media (min-width: 800px) {
+  h1 {
+    font-size: 5rem;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  .roomIdInput {
+    max-width: 15rem;
+  }
+
+  .content {
+        max-width: 60vw
+  }
+}
         </style>
 
         
     <div class="content">
         <h1>Chatrooms</h1>
+
         <form class="login-form">
-          <div>
-            <label for="email">Email</label>
-          </div>
-          <input type="text" id="email" />
-          <div>
-            <label for="name">Nombre</label>
-          </div>
-          <input type="text" id="name" />
-          <div>
-            <label for="rooms">Room</label>
-          </div>
-          <select name="rooms" id="rooms">
-            <option value="new-room">Nueva Sala</option>
-            <option value="existing-room">Sala Existente</option>
-          </select>
-          <div id="room-id">
+          <div class="separador">
             <div>
-              <label for="room-id">Room ID</label>
+              <label for="email">Email</label>
             </div>
-            <input type="text" / id="roomId">
+            <input type="text" id="email" />
+          </div>
+
+          <div class="separador">
+            <div>
+              <label for="name">Nombre</label>
+            </div>
+            <input type="text" id="name" />
+          </div>
+
+          <div class="separador">
+            <div>
+              <label for="rooms">Room</label>
+            </div>
+            <select name="rooms" id="rooms">
+              <option value="new-room">Nueva Sala</option>
+              <option value="existing-room">Unirse a Sala</option>
+            </select>
+            <div id="room-id" class="roomIdContainter">
+              <div>
+                <label for="room-id">Codigo de Sala:</label>
+              </div>
+              <input type="text" id="roomId" class="roomIdInput" />
+            </div>
           </div>
           <div class="button-container">
             <button type="submit">Entrar</button>
           </div>
         </form>
-    </div>
+      </div>
         `
     }
 }
