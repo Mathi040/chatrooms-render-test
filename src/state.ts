@@ -1,7 +1,7 @@
 import { rtdb } from "./rtdb"
 import map from "lodash/map"
 
-const API_BASE_URL = "http://localhost:3000"
+const API_BASE_URL = "https://chatrooms-render-test.onrender.com/"
 type Message = {
     from: string,
     message: string
